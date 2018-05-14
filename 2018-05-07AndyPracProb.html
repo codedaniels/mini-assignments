@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            // make a function to check if some string is a palendrome or not
+            function palindromeCheker (someString) {
+                var reverseString = '';
+                var newTempString = someString.split(' ').join('');
+                // stripping spaces betwen in case of spaces
+                newTempString = newTempString.toLowerCase();
+                // making the entire string same case
+                newTempString = newTempString .replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~']/g,"");
+                // stripping all punctuations
+                    function stringBackwards (newTempString) {
+                        for(var stringIndex = newTempString.length-1; stringIndex >= 0; --stringIndex) {
+                            reverseString += newTempString[stringIndex]
+                        } //closing for loop
+                    } //closing stringBackwards function
+                    stringBackwards(newTempString);
+                switch (newTempString === reverseString) {
+                    case true:
+                    console.log(`TRUE, "${someString}" is a palindrome`);
+                    break;
+                    case false:
+                    console.log (`FALSE, "${someString}" is NOT a palindrome`);
+                    break;
+                }//closing switch statement
+            } //closing palindromechecker function
+
+
+            var racecar = "racecar";
+            var tacocat = "tacocat";
+            var lisabonet = "lisabonetatenobasil";
+            var amanaplan = "a man, a plan, a canal: Panama!"
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
