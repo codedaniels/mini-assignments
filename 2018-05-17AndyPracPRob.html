@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        var array = [["Hi",null,null,"what",null],
+                     ["eat",null,"Andy",null,"will"],
+                     [null,"for","lunch",null,null],
+                     ["?",null,"today",null,null]];
+        var resultString = "";
+
+        // output should be a string
+        // "Hi what will Andy eat for lunch today?"
+
+        function reverseOddArrayIndexValues (anyArray) {
+            for (var i=1; i < anyArray.length; i+=2) { 
+                    anyArray[i].reverse();
+            }
+        }
+
+        function arrayToString (anyArray) {
+            for (var i=0; i<anyArray.length; i++)
+            resultString += anyArray[i].join(" ");
+        }
+
+        function reverseEveryOtherIndexValueAndThenConcatinateToString ( anyArray ) {
+            reverseOddArrayIndexValues (anyArray);
+            arrayToString (anyArray);
+            return resultString;
+        }
+        
+
+
+// SARAH CHUN SOLUTION
+var andy = [['Hi', null, null, 'what', null],
+['eat', null, 'Andy', null, 'will'],  // reverse array
+[null, 'for', 'lunch', null, null],
+['?', null, 'today', null, null]]; //reverse array
+
+
+var emptyArray= [];
+var finalString;
+
+function joinSentence(array){
+
+for(var i = 0; i < array.length; i++){
+  if(i%2 ===0){
+    for(var j = 0; j < array[i].length; j++){
+if(array[i][j] !== null ){
+    var word = array[i][j];
+emptyArray.push(word)
+}
+    }
+  }
+else if(i%2 !==0){
+    for(var m = array.length-1; m >=0; m--){
+      if(array[i][m] !== null){
+    var word = array[i][m];
+emptyArray.push(word);
+      }
+    } 
+}
+
+    }
+    return finalString = emptyArray.join(' ');
+}
+joinSentence(andy)
+    
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

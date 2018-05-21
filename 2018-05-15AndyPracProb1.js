@@ -39,17 +39,15 @@ function rotate90degrees (array) {
     }
 };
 
-// simply replaces
-// why does this replace firstArray?
+// copies original array data to new array then simply replaces 
 var firstArray = [[1,2,3], [4,5,6], [7,8,9]]
 var reverseArray = [];
 console.log("first array before function" + firstArray)
 function rotateClockWise(array){
- reverseArray = array;
- reverseArray = reverseArray.reverse();
-  console.log("array in func " + array)
-  console.log("first array in func" + firstArray)
-  console.log("reverseArray in func " + reverseArray)
+    for (var i = 0; i < firstArray.length; i++) {
+        reverseArray.push(firstArray[i].slice());
+    }
+    reverseArray = reverseArray.reverse();
  for(var i = 0; i < reverseArray.length; i++){
    for (var k = 0; k < i; k++){
      var tempNum = reverseArray[i][k];
